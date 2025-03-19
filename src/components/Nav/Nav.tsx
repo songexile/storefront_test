@@ -12,16 +12,16 @@ import { Link } from 'react-router-dom';
 function Nav() {
   const { cartItems } = useContext(CartContext)
   return (
-    <nav className="bg-black w-screen h-16 gap-4 text-2xl text-white flex items-center justify-evenly cursor-pointer">
+    <nav className="bg-black fixed top-0 z-50  w-screen h-16 gap-4 text-2xl text-white flex items-center justify-evenly cursor-pointer">
       <Link to='/'>
         <h1 className='underline'>{title}</h1>
 
       </Link>
       <Link to='/products'>View All Collections</Link>
 
-      <a className='flex items-center gap-1 font-light' href='/cart'><FaShoppingCart />
-        {cartItems.length}
-      </a>
+      <Link to='/cart' className='flex items-center gap-1 font-light'><FaShoppingCart />
+      {cartItems.reduce((total, item) => total + item.quantity, 0)}
+      </Link>
 
     </nav>
   )
