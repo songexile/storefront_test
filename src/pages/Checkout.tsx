@@ -1,10 +1,13 @@
 import React, { useContext, useState } from 'react';
 import { CartContext } from '../context/cart';
 import Layout from '../components/Layout/Layout';
+import { useLocation, Navigate } from 'react-router-dom';
+
 
 function Checkout() {
   const { cartItems, clearCart } = useContext(CartContext);
   const [orderConfirmed, setOrderConfirmed] = useState(false);
+  const location = useLocation();
 
   const handleCheckout = () => {
     // Clear the cart
@@ -12,6 +15,11 @@ function Checkout() {
     // Set confirmation state
     setOrderConfirmed(true);
   };
+
+  if (location.state?.from !== '/cart') {
+    return <Navigate to="/cart" replace />;
+  }
+
 
   return (
     <Layout>

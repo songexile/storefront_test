@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { CartContext } from "../context/cart";
 import Layout from "../components/Layout/Layout";
+import { Link, Navigate } from "react-router-dom";
 
 const Cart = () => {
   const { cartItems, addToCart, removeFromCart } = useContext(CartContext);
@@ -49,6 +50,13 @@ const Cart = () => {
               </li>
             ))}
          <p className="text-2xl">Total: ${totalPrice.toFixed(2)} </p>   
+         <Link 
+  to="/checkout" 
+  state={{ from: '/cart' }}
+  className="w-full p-3 rounded-md bg-green-500 text-white hover:bg-green-600 transition-all font-medium text-center"
+>
+  Proceed to Checkout
+</Link>
           </ul>
         )}
       </div>

@@ -8,9 +8,9 @@ import Products from './pages/Products';
 import IndividualProducts from './pages/IndividualProduct';
 import { CartProvider } from './context/cart';
 import Cart from './pages/Cart';
+import Checkout from './pages/Checkout';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <CartProvider>
@@ -20,6 +20,7 @@ function App() {
   <Route path='/products' element={<Products/>} />
   <Route path='products/:id' element={<IndividualProducts/>} />
   <Route path='cart/' element={<Cart/>} />
+  <Route path='checkout' element={<Checkout/>} />
 
 </Routes>
     </BrowserRouter>

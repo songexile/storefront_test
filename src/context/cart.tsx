@@ -7,6 +7,7 @@ export const CartContext = createContext({} as {
   cartItems: CartInterface[];
   addToCart: (item: Product) => void;
   removeFromCart: (productId: number) => void;
+  clearCart: () => void;
 });
 
 export const CartProvider = ({ children }: CartProps) => {
@@ -52,6 +53,12 @@ export const CartProvider = ({ children }: CartProps) => {
   
     setCartItems(updatedCart);
   };
+
+  const clearCart = () => {
+    setCartItems([]);
+    localStorage.removeItem("cartItems"); // Clear cart from localStorage as well
+  };
+  
   
   useEffect(() => {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
@@ -69,7 +76,8 @@ export const CartProvider = ({ children }: CartProps) => {
       value={{
         cartItems,
         addToCart,
-        removeFromCart
+        removeFromCart,
+        clearCart
       }}
     >
       {children}
