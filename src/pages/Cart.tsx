@@ -3,6 +3,8 @@ import { CartContext } from "../context/cart";
 import Layout from "../components/Layout/Layout";
 import { Link, Navigate } from "react-router-dom";
 
+// Click on cart to see how many items you have and remove/add quanity.
+
 const Cart = () => {
   const { cartItems, addToCart, removeFromCart } = useContext(CartContext);
 
@@ -12,7 +14,7 @@ const Cart = () => {
 
   return (
     <Layout>
-      <div className="max-w-3xl mx-auto p-6 bg-white shadow-md rounded-md">
+      <div className="max-w-3xl mx-auto p-6 bg-white rounded-md">
         <h1 className="text-3xl font-bold text-center mb-6">Checkout</h1>
         
         {cartItems.length === 0 ? (
