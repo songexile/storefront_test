@@ -2,9 +2,9 @@ import React, { useContext } from 'react'
 import Layout from '../components/Layout/Layout'
 import { useParams, useNavigate } from 'react-router-dom'
 import { CartContext } from '../context/cart'
-import { useProduct, useProducts } from '../hooks/fetchProducts'  // Import custom hooks
-import ProductDetailCard from '../components/Product/ProductDetailCard'  // Import the detail card
-import ProductCard from '../components/Product/ProductCard'  // Import product card
+import { useProduct, useProducts } from '../hooks/fetchProducts' 
+import ProductDetailCard from '../components/Product/ProductDetailCard' 
+import ProductCard from '../components/Product/ProductCard' 
 import { Product } from '../components/Product/product.interface'
 
 function IndividualProducts() {
