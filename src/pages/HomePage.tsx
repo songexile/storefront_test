@@ -22,10 +22,10 @@ function HomePage() {
         className="absolute inset-0 w-full h-full object-cover opacity-80"
       />
       <div className="relative text-center px-6">
-        <h1 className="text-4xl lg:text-5xl font-bold text-white drop-shadow-lg">
+        <h1 className="text-4xl lg:text-5xl font-bold  drop-shadow-lg">
           Quality Clothes Based in Christchurch
         </h1>
-        <p className="mt-4 text-lg text-white opacity-90">
+        <p className="mt-4 text-lg  opacity-90">
           Discover our best collection and redefine your style.
         </p>
       </div>
@@ -33,7 +33,7 @@ function HomePage() {
   );
 
   const productList = (
-    <div className="w-full max-w-6xl mt-16 px-6">
+    <div className="w-full max-w-6xl  mt-16 px-6 rounded-md">
     
       {/* Loading state while we fetch 3 products */}
       {isLoading && <LoadingState />}
@@ -44,7 +44,7 @@ function HomePage() {
       <div className="text-center mt-10">
         <Link
           to="/products"
-          className="px-8 py-3 bg-blue-600 text-white rounded-lg shadow-lg hover:bg-blue-500 transition"
+          className="px-8 py-3 bg-primary-content transition"
         >
           View All Products
         </Link>
@@ -54,8 +54,9 @@ function HomePage() {
 
   return (
     <Layout>
-      <div className="bg-white flex flex-col items-center">
+      <div className="flex flex-col items-center">
         {heroContent}
+       
         {productList}
       </div>
     </Layout>

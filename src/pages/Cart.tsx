@@ -36,14 +36,14 @@ const Cart = () => {
                   <p className="text-gray-600">Price: ${item.products.price}</p>
                   <div className="flex items-center mt-2">
                     <button
-                      className="px-3 py-1 bg-red-500 text-white rounded-md"
+                      className="px-3 py-1 bg-red-500  rounded-md"
                       onClick={() => removeFromCart(item.products.id)}
                     >
                       -
                     </button>
                     <span className="mx-4">{item.quantity}</span>
                     <button
-                      className="px-3 py-1 bg-green-500 text-white rounded-md"
+                      className="px-3 py-1 bg-green-500  rounded-md"
                       onClick={() => addToCart(item.products)}
                     >
                       +
@@ -57,7 +57,7 @@ const Cart = () => {
             <Link
               to="/checkout"
               state={{ from: "/cart" }}
-              className="w-full p-3 rounded-md bg-green-500 text-white hover:bg-green-600 transition-all font-medium text-center"
+              className="w-full p-3 rounded-md bg-green-500  hover:bg-green-600 transition-all font-medium text-center"
             >
               Proceed to Checkout
             </Link>

@@ -11,7 +11,7 @@ interface RecommendedProductsProps {
 function RecommendedProducts({ products, onAddToCart, title }: RecommendedProductsProps) {
   return (
     <div className="mt-12">
-      <h2 className="text-2xl font-semibold text-gray-800 mb-4">{title}</h2>
+      <h2 className="text-2xl font-semibold mb-4">{title}</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {products.map((prod) => (
           <ProductCard key={prod.id} product={prod} onAddToCart={onAddToCart} />

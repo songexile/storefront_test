@@ -56,7 +56,7 @@ function IndividualProducts() {
           </p>
           <button
             onClick={() => navigate("/products")}
-            className="px-4 py-2 bg-gray-200 text-white rounded-md"
+            className="px-4 py-2 bg-gray-200  rounded-md"
           >
             Back to Products
           </button>

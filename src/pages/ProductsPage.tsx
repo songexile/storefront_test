@@ -8,7 +8,7 @@ import "rc-slider/assets/index.css";
 import { useFilters } from "../hooks/useFilters";
 import LoadingState from "../components/UI/LoadingState";
 import ErrorState from "../components/UI/ErrorState";
-import productsBanner from "../assets/images/heroImage.jpg"; // Ensure this image exists
+import productsBanner from "../assets/images/heroImage.jpg";
 
 function Products({ limit }: { limit?: number }) {
   const { addToCart } = useContext(CartContext);
@@ -46,16 +46,15 @@ function Products({ limit }: { limit?: number }) {
           <img
             src={productsBanner}
             alt="Products Banner"
-            className="w-full h-full object-cover rounded-md shadow-lg"
+            className="w-full h-full object-cover rounded-lg shadow-lg"
           />
-         
         </div>
 
         {/* Filters Section */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-          <div>
+          <div className="card p-4 shadow">
             <h3 className="text-lg font-medium mb-2">Filter by Price</h3>
-            <p>Above: ${minPrice}</p>
+            <p className="mb-2">Above: ${minPrice}</p>
             <Slider
               min={0}
               max={maxPrice}
@@ -65,15 +64,13 @@ function Products({ limit }: { limit?: number }) {
             />
           </div>
 
-          <div>
+          <div className="card p-4 shadow">
             <h3 className="text-lg font-medium mb-2">Filter by Category</h3>
             <div className="flex flex-wrap gap-2">
               <button
                 onClick={() => setSelectedCategory("all")}
-                className={`px-4 py-2 rounded-full text-sm ${
-                  selectedCategory === "all"
-                    ? "bg-blue-600 text-white"
-                    : "bg-gray-200 text-gray-800 hover:bg-gray-300"
+                className={`btn btn-sm ${
+                  selectedCategory === "all" ? "btn-primary" : "btn-outline"
                 }`}
               >
                 All Categories
@@ -82,10 +79,8 @@ function Products({ limit }: { limit?: number }) {
                 <button
                   key={category}
                   onClick={() => setSelectedCategory(category)}
-                  className={`px-4 py-2 rounded-full text-sm ${
-                    selectedCategory === category
-                      ? "bg-blue-600 text-white"
-                      : "bg-gray-200 text-gray-800 hover:bg-gray-300"
+                  className={`btn btn-sm ${
+                    selectedCategory === category ? "btn-primary" : "btn-outline"
                   }`}
                 >
                   {category}
@@ -95,23 +90,20 @@ function Products({ limit }: { limit?: number }) {
           </div>
 
           {(minPrice > 0 || selectedCategory !== "all") && (
-            <div>
+            <div className="card p-4 shadow">
               <h3 className="text-lg font-medium mb-2">Active Filters</h3>
               <div className="flex flex-wrap gap-2">
                 {minPrice > 0 && (
-                  <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">
+                  <span className="badge badge-info">
                     Price: ${minPrice}
                   </span>
                 )}
                 {selectedCategory !== "all" && (
-                  <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">
+                  <span className="badge badge-info">
                     Category: {selectedCategory}
                   </span>
                 )}
-                <button
-                  onClick={clearFilters}
-                  className="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm hover:bg-gray-300"
-                >
+                <button className="btn btn-error btn-sm" onClick={clearFilters}>
                   Clear Filters
                 </button>
               </div>
@@ -134,12 +126,9 @@ function Products({ limit }: { limit?: number }) {
               />
             ))
           ) : (
-            <div className="col-span-full text-center py-12">
-              <p className="text-xl text-gray-500">No products match your filters.</p>
-              <button
-                onClick={clearFilters}
-                className="mt-4 px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
-              >
+            <div className="col-span-full text-center">
+              <p className="text-lg text-gray-500">No products match your filters.</p>
+              <button className="btn btn-primary mt-4" onClick={clearFilters}>
                 Reset Filters
               </button>
             </div>
