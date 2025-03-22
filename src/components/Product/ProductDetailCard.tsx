@@ -41,7 +41,7 @@ const ProductDetailCard: React.FC<ProductDetailCardProps> = ({ product, onAddToC
       
       <button 
         onClick={() => onAddToCart(product)} 
-        className='mt-6 p-3 rounded-md bg-white hover:bg-orange-500 text-black font-medium transition-all'
+        className='mt-6 p-3 rounded-md bg-white hover:bg-orange-500 text-black font-medium transition-all cursor-pointer'
       >
         Add to Cart
       </button>
