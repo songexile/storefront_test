@@ -34,6 +34,9 @@ function Nav() {
             <Link to="/products" className="btn btn-ghost text-lg">
               View All Collections
             </Link>
+            <Link to="/settings" className="btn btn-ghost text-lg">
+              Settings
+            </Link>
             <Link to="/cart" className="btn btn-ghost flex items-center space-x-2 text-lg">
               <FaShoppingCart className="text-2xl" />
               <span className="badge badge-secondary">{cartQuantity}</span>
@@ -47,6 +50,9 @@ function Nav() {
         <div className="md:hidden bg-base-200 p-4 fixed w-full z-40 mt-16 shadow-md">
           <Link to="/products" className="block py-2 text-lg">
             View All Collections
+          </Link>
+          <Link to="/settings" className="block py-2 text-lg">
+            Settings
           </Link>
         </div>
       )}

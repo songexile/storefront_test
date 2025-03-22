@@ -3,7 +3,7 @@ import { title } from "../../settings/config"
 
 function Footer() {
   return (
-    <footer className="bg-black  py-6">
+    <footer className="bg-secondary  py-6">
     <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-4">
       <p className="text-sm">&copy; 2025 {title}. All rights reserved.</p>
       <div className="flex gap-6 mt-4 md:mt-0">
