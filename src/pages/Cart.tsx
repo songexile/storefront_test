@@ -3,6 +3,8 @@ import { CartContext } from "../context/cart";
 import Layout from "../components/Layout/Layout";
 import { Link, Navigate } from "react-router-dom";
 
+// Click on cart to see how many items you have and remove/add quanity.
+
 const Cart = () => {
   const { cartItems, addToCart, removeFromCart } = useContext(CartContext);
 
@@ -12,18 +14,21 @@ const Cart = () => {
 
   return (
     <Layout>
-      <div className="max-w-3xl mx-auto p-6 bg-white shadow-md rounded-md">
+      <div className="max-w-3xl mx-auto p-6 bg-white rounded-md">
         <h1 className="text-3xl font-bold text-center mb-6">Checkout</h1>
-        
+
         {cartItems.length === 0 ? (
           <p className="text-center text-gray-500">Your cart is empty.</p>
         ) : (
           <ul className="space-y-4">
             {cartItems.map((item, index) => (
-              <li key={index} className="flex items-center p-4 border rounded-md shadow-sm">
-                <img 
-                  src={item.products.image} 
-                  alt={item.products.title} 
+              <li
+                key={index}
+                className="flex items-center p-4 border rounded-md shadow-sm"
+              >
+                <img
+                  src={item.products.image}
+                  alt={item.products.title}
                   className="w-24 h-24 object-cover rounded-md mr-6"
                 />
                 <div className="flex-1">
@@ -43,20 +48,19 @@ const Cart = () => {
                     >
                       +
                     </button>
-                    <p className="text-xl font-bold">
-    </p>
+                    <p className="text-xl font-bold"></p>
                   </div>
                 </div>
               </li>
             ))}
-         <p className="text-2xl">Total: ${totalPrice.toFixed(2)} </p>   
-         <Link 
-  to="/checkout" 
-  state={{ from: '/cart' }}
-  className="w-full p-3 rounded-md bg-green-500 text-white hover:bg-green-600 transition-all font-medium text-center"
->
-  Proceed to Checkout
-</Link>
+            <p className="text-2xl">Total: ${totalPrice.toFixed(2)} </p>
+            <Link
+              to="/checkout"
+              state={{ from: "/cart" }}
+              className="w-full p-3 rounded-md bg-green-500 text-white hover:bg-green-600 transition-all font-medium text-center"
+            >
+              Proceed to Checkout
+            </Link>
           </ul>
         )}
       </div>

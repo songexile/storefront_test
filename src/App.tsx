@@ -4,8 +4,8 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from './pages/HomePage';
-import Products from './pages/Products';
-import IndividualProducts from './pages/IndividualProduct';
+import Products from './pages/ProductsPage';
+import IndividualProducts from './pages/SingleProductPage';
 import { CartProvider } from './context/cart';
 import Cart from './pages/Cart';
 import Checkout from './pages/Checkout';

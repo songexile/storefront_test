@@ -1,1 +1,3 @@
-export const title = "Cool Store"
+//store settings here
+
+export const title = "Smudge Merch"
