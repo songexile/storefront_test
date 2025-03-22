@@ -39,7 +39,7 @@ function Products({ limit }: { limit?: number }) {
   }
 
   return (
-    <Layout>
+    <Layout pageTitle="Products">
       <div className="container mx-auto mt-32 px-4 sm:px-6 lg:px-8">
         {/* Page Banner */}
         <div className="relative w-full h-64 mb-8">

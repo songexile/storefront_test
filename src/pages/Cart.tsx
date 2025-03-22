@@ -11,7 +11,7 @@ const Cart = () => {
   }, 0);
 
   return (
-    <Layout>
+    <Layout pageTitle="Cart">
       <div className="flex bg-secondary justify-center items-center min-h-screen">
         <div className="card w-full max-w-3xl p-6 bg-base-100 shadow-md">
           <h1 className="text-3xl font-bold text-center mb-6">Checkout</h1>

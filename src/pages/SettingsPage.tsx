@@ -23,7 +23,7 @@ function SettingsPage() {
   }
 
   return (
-    <Layout>
+    <Layout pageTitle='Settings'>
     <div className='flex items-center flex-col gap-4 justify-center h-64 w-screen'>
         <h1>Welcome to the settings page.</h1>
       <button className='btn btn-primary w-40' onClick={handleToggle}>
