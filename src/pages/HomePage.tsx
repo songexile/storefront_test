@@ -10,6 +10,7 @@ import LoadingState from "../components/UI/LoadingState";
 import { Link } from "react-router-dom";
 import RecommendedProducts from "../components/Product/RecommendedProducts";
 
+
 function HomePage() {
   const { addToCart } = useContext(CartContext);
   const { products, isLoading, error } = useProducts(3); // Fetch first three products
@@ -53,7 +54,7 @@ function HomePage() {
   );
 
   return (
-    <Layout>
+    <Layout pageTitle="Homepage">
       <div className="flex flex-col items-center">
         {heroContent}
        
