@@ -16,6 +16,6 @@
   }
   
   export interface CartInterface {
-    products: Product[],  // Single product
+    products: Product,  // Single product
     quantity: number
   }

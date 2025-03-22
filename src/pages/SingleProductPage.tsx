@@ -6,6 +6,7 @@ import { useProduct, useProducts } from '../hooks/fetchProducts'
 import ProductDetailCard from '../components/Product/ProductDetailCard' 
 import ProductCard from '../components/Product/ProductCard' 
 import { Product } from '../components/Product/product.interface'
+import LoadingState from '../components/UI/LoadingState'
 
 function IndividualProducts() {
   const { id } = useParams()
@@ -18,9 +19,7 @@ function IndividualProducts() {
   if (productLoading || productsLoading) {
     return (
       <Layout>
-        <div className="flex justify-center items-center h-64">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600"></div>
-        </div>
+      <LoadingState/>
       </Layout>
     )
   }
