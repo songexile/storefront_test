@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Product } from './product.interface';
+import React from "react";
+import { Link } from "react-router-dom";
+import { Product } from "./product.interface";
 
 interface ProductCardProps {
   product: Product;
@@ -8,35 +8,34 @@ interface ProductCardProps {
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart }) => (
-  <div className='w-full max-w-xs mx-auto h-full flex items-center flex-col justify-between gap-4 bg-gray-200 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow'>
-    
-    <Link to={`/products/${product.id}`} className="w-full flex flex-col items-center flex-grow">
-      {/* Product Image */}
-      <div className="w-full flex justify-center py-4">
-        <img 
-          className='object-contain h-40 w-40 rounded-xl' 
-          src={product.image} 
-          alt={product.title}
-        />
-      </div>
-      
-      {/* Product Info */}
-      <div className='text-center'>
-        <h2 className='font-medium text-gray-800 line-clamp-2 h-12'>{product.title}</h2>
-        <p className='text-xl font-semibold mt-2'>${product.price.toFixed(2)}</p>
-      </div>
-    </Link>
-    
-    {/* Add to Cart Button */}
-    <button 
-      onClick={(e) => {
-        e.stopPropagation(); // Prevent Link from triggering
-        onAddToCart(product);
-      }} 
-      className='w-full p-3 rounded-md bg-white hover:bg-orange-500 hover:text-white transition-all font-medium cursor-pointer'
-    >
-      Add to Cart
-    </button>
+  <div className="card w-full max-w-xs mx-auto bg-base-200 shadow-xl">
+    <figure className="px-4 pt-4">
+      <img
+        className="object-contain h-40 w-40 rounded-xl"
+        src={product.image}
+        alt={product.title}
+      />
+    </figure>
+
+    <div className="card-body items-center text-center">
+      <Link
+        to={`/products/${product.id}`}
+        className="flex flex-col items-center flex-grow w-full"
+      >
+        <h2 className="card-title line-clamp-2">{product.title}</h2>
+        <p className="text-lg font-semibold">${product.price.toFixed(2)}</p>
+      </Link>
+
+      <button
+        onClick={(e) => {
+          e.stopPropagation();
+          onAddToCart(product);
+        }}
+        className="btn btn-secondary btn-block transition-transform transform hover:scale-105 hover:bg-secondary-focus"
+      >
+        Add to Cart
+      </button>
+    </div>
   </div>
 );
 

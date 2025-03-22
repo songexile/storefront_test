@@ -9,6 +9,8 @@ import IndividualProducts from './pages/SingleProductPage';
 import { CartProvider } from './context/cart';
 import Cart from './pages/Cart';
 import Checkout from './pages/Checkout';
+import SettingsPage from './pages/SettingsPage';
+
 
 function App() {
 
@@ -21,6 +23,7 @@ function App() {
   <Route path='products/:id' element={<IndividualProducts/>} />
   <Route path='cart/' element={<Cart/>} />
   <Route path='checkout' element={<Checkout/>} />
+  <Route path='settings' element={<SettingsPage/>} />
 
 </Routes>
     </BrowserRouter>
