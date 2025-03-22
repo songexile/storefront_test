@@ -8,11 +8,11 @@ import { CartContext } from "../context/cart";
 import ErrorState from "../components/UI/ErrorState";
 import LoadingState from "../components/UI/LoadingState";
 import { Link } from "react-router-dom";
-
+import RecommendedProducts from "../components/Product/RecommendedProducts";
 
 function HomePage() {
   const { addToCart } = useContext(CartContext);
-  const { products, isLoading, error } = useProducts(3); // Fetch top 3 products
+  const { products, isLoading, error } = useProducts(3); // Fetch first three products
 
   const heroContent = (
     <div className="relative w-full h-96 lg:h-[500px] flex items-center justify-center">
@@ -34,25 +34,18 @@ function HomePage() {
 
   const productList = (
     <div className="w-full max-w-6xl mt-16 px-6">
-      <h2 className="text-3xl font-bold text-center mb-8">
-        Best Sellers
-      </h2>
-
+    
+      {/* Loading state while we fetch 3 products */}
       {isLoading && <LoadingState />}
       {error && <ErrorState message={error} />}
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-        {products?.map((product: Product) => (
-          <ProductCard
-            key={product.id}
-            product={product}
-            onAddToCart={addToCart}
-          />
-        ))}
-      </div>
-      
+      <RecommendedProducts products={products} title="Best Sellers" onAddToCart={addToCart} />
+
       <div className="text-center mt-10">
-        <Link to="/products" className="px-8 py-3 bg-blue-600 text-white rounded-lg shadow-lg hover:bg-blue-500 transition">
+        <Link
+          to="/products"
+          className="px-8 py-3 bg-blue-600 text-white rounded-lg shadow-lg hover:bg-blue-500 transition"
+        >
           View All Products
         </Link>
       </div>

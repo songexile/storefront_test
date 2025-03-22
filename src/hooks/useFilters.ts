@@ -10,8 +10,8 @@ export const useFilters = (products: Product[])  => {
   // Update maxPrice and categories when products change
   useEffect(() => {
     if (products.length > 0) {
-      setMaxPrice(Math.max(...products.map(product => product.price)));
-      setCategories([...new Set(products.map(product => product.category))]);
+      setMaxPrice(Math.max(...products.map(product => product.price))); //On page load run and find max product price
+      setCategories([...new Set(products.map(product => product.category))]); //Find how many catorogires there are
     }
   }, [products]);
 
