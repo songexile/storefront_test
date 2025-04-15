@@ -1,4 +1,2 @@
-FLOW -
-Home page
-Click cart to select items
-Checkout to finalise order.
+Simple Storefront store
+Live preview : https://storefrontotis.netlify.app/
